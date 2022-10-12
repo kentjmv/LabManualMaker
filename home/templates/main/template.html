@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+        <style>
+            #tiplogo {
+                height: 120px;
+            }
+            #account {
+                height: 100px;
+            }
+            #menubar-container {
+                overflow: hidden;
+                background-color: greenyellow;
+                
+            }
+            .menubar {
+                float:left;
+                color:black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+                text-align: baseline;
+            }
+            #menuright {
+                float: right;
+                position: relative;
+                
+            }
+
+            .sidenav {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                right: 0;
+                background-color: green;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
+            .sidecontent {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+            .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div id="sidebar" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn sidecontent" onclick="closeNav() ">&times;</a>
+            <p class="sidecontent">Home</p>
+            <p class="sidecontent">Profile</p>
+            <p class="sidecontent">Settings</p>
+            <p class="sidecontent">Logout</p>
+        </div>
+        <div id="menubar-container">
+            <a href="{% url 'mainsite:home' %}">
+                <img src="{% static 'images/TIPLogo.png' %}" id="tiplogo" class="menubar" />
+            </a>
+
+            <div id="menuright" class="menu">
+                <a class="menubar" href="{% url 'mainsite:home' %}">Home</a>
+                <a class="menubar" href="{% url 'mainsite:newlab' %}">Create</a>
+                <a class="menubar" href="{% url 'mainsite:aboutus' %}">About Us</a>
+                <a class="menubar" href="{% url 'mainsite:contact' %}">Contact</a>
+                <img src="{% static 'images/account.png' %}" id="account" class="menubar" onclick="openNav()"/>
+            </div>
+                
+
+        </div>
+        
+        <div id="main">
+            {% block body %}
+            {% endblock %}
+        </div>
+
+        
+    </body>
+    <script>
+        function openNav(){
+            document.getElementById("sidebar").style.width = "250px";
+        }
+        function closeNav(){
+            document.getElementById("sidebar").style.width = "0";
+        }
+
+        document.querySelector('#main').addEventListener('click', closeNav)
+
+        
+    </script>
+
+
+</html>

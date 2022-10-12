@@ -1,0 +1,56 @@
+{% extends "main/template.html" %}
+
+{% load static %}
+
+{% block title %}
+    Lab Manual Maker - About us
+{% endblock %}
+
+{% block body %}
+    <style>
+        .idpic {
+            height: 100px;
+        }
+        #bodycontainer {
+            display: flex;
+        }
+        .students {
+            display: flex;
+        }
+    </style>
+    <div id="bodycontainer">
+        <div>
+            <img src="{% static 'images/group.png' %}" id="grouplogo" />
+        </div>
+        <div>
+            <p>Laboratory Manual Maker</p>
+            <p>Department of Computer Engineering</p>
+            <p>BSCpE</p>
+            <ul>
+                <li class="students">
+                    <img src="{% static 'images/Bonifacio.jpg' %}" class="idpic" />
+                    <h2>J.C. Jeff Bonifacio</h2>
+                </li>
+                <li class="students">
+                    <img src="{% static 'images/Espela.jpg' %}" class="idpic" />
+                    <h2>Emerson Espela</h2>
+                </li>
+                <li class="students">
+                    <img src="{% static 'images/Ortega.png' %}" class="idpic" />
+                    <h2>Jasper Ortega</h2>
+                </li>
+                <li class="students">
+                    <img src="{% static 'images/Reyes.jpg' %}" class="idpic" />
+                    <h2>Jhoanna Reyes</h2>
+                </li>
+                <li class="students">
+                    <img src="{% static 'images/Viernes.png' %}" class="idpic" />
+                    <h2>Kent Jan Viernes</h2>
+                </li>
+            </ul>
+            <p>Engr Jonathan Taylar</p>
+            <p>Instructor</p>
+        </div>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "main/template.html" %}
+
+{% load static %}
+
+{% block title %}
+    New Laboratory Manual
+{% endblock %}
+
+{% block body %}
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.media}}
+            {% for field in form %}
+                <div>
+                    <label for="{{field.label}}" onclick="showfield('{{field.label}}')">{{field.label}}</label>
+                    <div class="field" id="{{field.label}}">
+                        {{field}}
+                    </div>
+                </div>
+                <br>
+            {% endfor %}
+            
+            
+            <input id="submit" type="submit" name="newlab" />
+        </form>
+    </div>
+    <style>
+        .field {
+            display: none;
+        }
+    </style>
+    <script>
+        function showfield(x){
+            if (document.getElementById(x).style.display === 'block') {
+                document.getElementById(x).style.display = 'none';
+            } else {
+                document.getElementById(x).style.display = 'block';
+            }
+            
+        }
+        
+    </script>
+
+    
+
+
+{% endblock %}

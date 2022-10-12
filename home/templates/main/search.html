@@ -1,0 +1,24 @@
+{% extends "main/template.html" %}
+
+{% load static %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block body %}
+    
+    <div>
+        <h1>Laboratory Manual Maker</h1>
+        <h1>you searched for {{ searched }}</h1>
+        <div class="search">
+            
+            <form method="POST" >
+                {% csrf_token %}
+                <label for="searched">Search: </label>
+                <input name="searched"  placeholder="Course / Topic / Instructor" />
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <title>
+            Lab Manual Maker - Login
+        </title>
+        <meta charset="utf-8" />
+        <style>
+            #tiplogo {
+                height: 200px;
+            }
+            .authtype {
+                background-color: pink;
+            }
+            #login {
+                display: block;
+            }
+            #register {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img src="{% static 'images/TIPLogo.png' %}" id="tiplogo" />
+            <h1>Laboratory Manual Maker</h1>
+        </header>
+        <div>
+            <h1 onclick="to_login()" class="authtype">Login</h1>
+            <h1 onclick="to_register()" class="authtype">Register</h1>
+            <div id="login">
+                <form method="POST">
+                    {% csrf_token %}
+                    <label for="email">Email: </label>
+                    <input required id="email" placeholder="email@example.com" type="email" />
+                    <label for="password">Password: </label>
+                    <input required id="password" placeholder="Password" type="password" />
+    
+                    <input type="submit" value="Login" id="Login" />
+                </form>
+            </div>
+            <div id="register">
+                <form method="POST">
+                    {% csrf_token %}
+                    <label for="fname">First Name: </label>
+                    <input required id="fname" placeholder="First Name"  />
+                    <label for="lname">Last Name: </label>
+                    <input required id="lname" placeholder="Last Name"  />
+                    <label for="email">Email: </label>
+                    <input required id="email" placeholder="email@example.com" type="email" />
+                    <label for="password">Password: </label>
+                    <input required id="password" placeholder="Password" type="password" />
+                    
+    
+                    <input type="submit" value="Register" id="Register" />
+                </form>
+            </div>
+            
+            <p></p>
+        </div>
+
+        <script>
+            function to_login() {
+                document.getElementById("login").style.display = "block";
+                document.getElementById("register").style.display = "none";
+            }
+            function to_register() {
+                document.getElementById("login").style.display = "none";
+                document.getElementById("register").style.display = "block";
+            }
+        </script>
+    </body>
+
+    
+</html>
