@@ -16,7 +16,8 @@
     }
     .container{
         text-align: center;
-        background: #f5f5f5;
+        background-size: cover;
+        background: #ECF8E5;
     }
     .header{
         padding-top: 60px;
@@ -41,9 +42,12 @@
         cursor: pointer;
         transition: 0.5s;
         box-sizing: border-box;
+        background-image: white;
+        border-radius: 20px;
+        transition: all .3s;
     }
     .team:hover{
-        backround: #ddd;
+        box-shadow: 0px 0px 30px 1px rgba(13, 247, 122, 0.3);
 
     }
     .team img{
@@ -61,22 +65,8 @@
         font-style: italic;
         color: black;
     }
-    .social-links{
-        margin: 14px;
-    }
-    .social-links a{
-        display: inline-block;
-        height: 30px;
-        width: 30px;
-        transition: .5s;
-    }
-    .social-links a:hover{
-        transform: scale(1.5);
-    }
-    .social-links a i{
-        color: black;
+    
 
-    }
     
 </style>
     <body>
@@ -91,12 +81,6 @@
                     <img src="{% static 'images/Bonifacio.jpg' %}" />
                     <div class="name">J.C. Jeff Bonifacio</div>
                     <div class="desig">Data Science</div>
-
-                    <div class="social-links">
-                        <a href="a"><i class="fa fa-facebook"></i></a>
-                        <a href="a"><i class="fa fa-instagram"></i></a>
-                        <a href="a"><i class="fa fa-linkedin"></i></a>
-                    </div>
                 </div>
                 <div class="team"> 
                     <img src="{% static 'images/Espela.jpg' %}" />
@@ -108,17 +92,19 @@
                     <div class="name">Jasper Ortega</div>
                     <div class="desig">Intelligent System</div>
                 </div>
-                <div class="team"> 
-                    <img src="{% static 'images/Reyes.jpg' %}" />
-                    <div class="name">Jhoanna Reyes</div>
-                    <div class="desig">System Administration</div>
-                </div>
-                <div class="team"> 
-                    <img src="{% static 'images/Viernes.png' %}"/>
-                    <div class="name">Kent Jan Viernes</div>
-                    <div class="desig">System Administration</div>
-                </div>
+                    <div class="team"> 
+                        <img src="{% static 'images/Reyes.jpg' %}" />
+                        <div class="name">Jhoanna Reyes</div>
+                        <div class="desig">System Administration</div>
+                    </div>
+
+                    <div class="team"> 
+                        <img src="{% static 'images/Viernes.png' %}"/>
+                        <div class="name">Kent Jan Viernes</div>
+                        <div class="desig">System Administration</div>
+                    </div>
             </div>
+
 
         </div>
     </body>
