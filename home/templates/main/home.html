@@ -6,17 +6,88 @@
     Laboratory Manual Maker
 {% endblock %}
 
+
 {% block body %}
-    <div>
-        <h1>Laboratory Manual Maker</h1>
-        <div class="search">
-            
-            <form method="POST" >
+    <style> 
+    .text-box{
+        width: 90%;
+        color: rgb(0, 0, 0);
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .text-box h1{
+        font-size: 40px;
+    }
+
+    .text-box h2{
+        font-size: 30px;
+    }
+    .text-box p{
+        font-size: 14px;
+        margin-bottom: 5%;
+        color: rgb(0, 0, 0);
+    }
+    .container{
+        margin-top: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: center;
+
+    }
+    .search-bar{
+        background-position: center;
+        width: 40%;
+        max-width: 700px;
+        background: linear-gradient(to right, #12441f,#09d635);
+        display: flex;
+        border-radius: 30px;
+        padding: 5px 10px;
+        backdrop-filter: blur(4px) saturate(180%);
+    }
+    .search-bar input{
+        background: transparent;
+        flex: 1;
+        border: 0;
+        outline: none;
+        padding: 20px 20px;
+        font-size: 20px;
+        color: #cac7ff;
+    }
+    ::placeholder{
+        color: #cac7ff;
+    }
+    .search-bar button img{
+        width: 50px;
+        background: transparent;
+}
+    .search-bar button{
+        border: 0;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        background: #58629b;
+        cursor: pointer;
+    }
+    </style>
+<body>
+    
+        <div class="text-box">
+            <h1> LABORATORY MANUAL MAKER</h1>
+            <h2> Technological Institute of the Philippines</h2>
+            <p>Making greatest function and easiest way to make.</p>
+        </div>
+
+        <div class="container">
+            <form method="POST" class="search-bar">
                 {% csrf_token %}
-                <label for="searched">Search: </label>
-                <input name="searched"  placeholder="Course / Topic / Instructor" />
-                <button type="submit">Search</button>
+                <input name="searched"  placeholder="Search: Course / Topic / Instructor" />
+                <button type="submit"><img src="{% static 'images/search.png' %}"></button>
             </form>
         </div>
-    </div>
+
+</body>
 {% endblock %}

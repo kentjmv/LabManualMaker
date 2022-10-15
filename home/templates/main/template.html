@@ -6,10 +6,19 @@
         <title>
             {% block title %}
             {% endblock %}
+
         </title>
         <style>
+            *{
+                margin: 0;
+                padding: 0;
+                background-color: #ECF8E5;
+                background-position: cover;
+
+            }
             #tiplogo {
                 height: 120px;
+                background-color: greenyellow;
             }
             #account {
                 height: 100px;
@@ -25,10 +34,18 @@
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
-                font-size: 17px;
+                font-size: 24px;
                 text-align: baseline;
+                background-color: greenyellow;
             }
             #menuright {
+                background-color: greenyellow;
+                float: right;
+                position: relative;
+                
+            }
+            #menuright img{
+                background-color: greenyellow;
                 float: right;
                 position: relative;
                 
@@ -62,6 +79,19 @@
                 margin-left: 50px;
             }
 
+            .nav-links a::after{
+                content: '';
+                width: 0%;
+                height: 2px;
+                background: #000000;
+                display: block;
+                margin: auto;
+                transition: 0.5s;
+            }
+            .nav-links a:hover::after{
+                width: 100%;
+
+            }
 
         </style>
     </head>
@@ -79,11 +109,13 @@
             </a>
 
             <div id="menuright" class="menu">
-                <a class="menubar" href="{% url 'mainsite:home' %}">Home</a>
-                <a class="menubar" href="{% url 'mainsite:newlab' %}">Create</a>
-                <a class="menubar" href="{% url 'mainsite:aboutus' %}">About Us</a>
-                <a class="menubar" href="{% url 'mainsite:contact' %}">Contact</a>
-                <img src="{% static 'images/account.png' %}" id="account" class="menubar" onclick="openNav()"/>
+                <div class="nav-links" id="navLinks">
+                    <a class="menubar" href="{% url 'mainsite:home' %}">Home</a>
+                    <a class="menubar" href="{% url 'mainsite:newlab' %}">Create</a>
+                    <a class="menubar" href="{% url 'mainsite:aboutus' %}">About Us</a>
+                    <a class="menubar" href="{% url 'mainsite:contact' %}">Contact</a>
+                    <img src="{% static 'images/account.png' %}" id="account" class="menubar" onclick="openNav()"/>
+                </div>
             </div>
                 
 
@@ -108,6 +140,15 @@
 
         
     </script>
+        <script>
+            var navLinks = document.getElementById("navLinks");
+            function showMenu(){
+                navLinks.style.right = "0";
+            }
+            function hideMenu(){
+                navLinks.style.right = "-200px";
+            }
+        </script>
 
 
 </html>
