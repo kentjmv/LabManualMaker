@@ -7,43 +7,116 @@
 {% endblock %}
 
 {% block body %}
-    <head>
-        <link rel="stylesheet" href="aboutus.css">
-    </head>
-    <body>
+<style>
+    * {
         
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .container{
+        text-align: center;
+        background: #f5f5f5;
+    }
+    .header{
+        padding-top: 60px;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        margin: auto;
+        line-height: 50px;
+    }
+
+    .sub-container{
+        max-width: 1200px;
+        margin: auto;
+        padding: 48px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .team{
+        margin: 5px;
+        padding: 22px;
+        max-width: 30%;
+        cursor: pointer;
+        transition: 0.5s;
+        box-sizing: border-box;
+    }
+    .team:hover{
+        backround: #ddd;
+
+    }
+    .team img{
+        width: 200px;
+        height: 200px;
+
+    }
+    .name{
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: uppercase;
+    }
+    .desig{
+        font-style: italic;
+        color: black;
+    }
+    .social-links{
+        margin: 14px;
+    }
+    .social-links a{
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        transition: .5s;
+    }
+    .social-links a:hover{
+        transform: scale(1.5);
+    }
+    .social-links a i{
+        color: black;
+
+    }
+    
+</style>
+    <body>
         <div class="container">
             <div class="header">
-                <img src="{% static 'images/group.png' %}" id="grouplogo" />
-                <p>Laboratory Manual Maker</p>
-                <p>Department of Computer Engineering</p>
-                <p>Bachelor of Science in Computer Engineering</p>
+                <h1>Laboratory Manual Maker</h1>
+                <h2>Department of Computer Engineering</h2>
+                <h2>Bachelor of Science in Computer Engineering</h2>
             </div>
             <div class="sub-container">
                 <div class="team"> 
-                    <img src="{% static 'images/Bonifacio.jpg' %}" class="idpic" />
+                    <img src="{% static 'images/Bonifacio.jpg' %}" />
                     <div class="name">J.C. Jeff Bonifacio</div>
                     <div class="desig">Data Science</div>
+
+                    <div class="social-links">
+                        <a href="a"><i class="fa fa-facebook"></i></a>
+                        <a href="a"><i class="fa fa-instagram"></i></a>
+                        <a href="a"><i class="fa fa-linkedin"></i></a>
+                    </div>
                 </div>
                 <div class="team"> 
-                    <img src="{% static 'images/Espela.jpg' %}" class="idpic" />
+                    <img src="{% static 'images/Espela.jpg' %}" />
                     <div class="name">Emerson Espela</div>
                     <div class="desig">Data Science</div>
                 </div>
                 <div class="team"> 
-                    <img src="{% static 'images/Ortega.png' %}" class="idpic" />
+                    <img src="{% static 'images/Ortega.png' %}" />
                     <div class="name">Jasper Ortega</div>
-                    <div class="desig">Data Science</div>
+                    <div class="desig">Intelligent System</div>
                 </div>
                 <div class="team"> 
-                    <img src="{% static 'images/Reyes.jpg' %}" class="idpic" />
+                    <img src="{% static 'images/Reyes.jpg' %}" />
                     <div class="name">Jhoanna Reyes</div>
-                    <div class="desig">Data Science</div>
+                    <div class="desig">System Administration</div>
                 </div>
                 <div class="team"> 
-                    <img src="{% static 'images/Viernes.png' %}" class="idpic" />
+                    <img src="{% static 'images/Viernes.png' %}"/>
                     <div class="name">Kent Jan Viernes</div>
-                    <div class="desig">Data Science</div>
+                    <div class="desig">System Administration</div>
                 </div>
             </div>
 
