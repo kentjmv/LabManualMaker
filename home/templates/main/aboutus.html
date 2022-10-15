@@ -7,50 +7,46 @@
 {% endblock %}
 
 {% block body %}
-    <style>
-        .idpic {
-            height: 100px;
-        }
-        #bodycontainer {
-            display: flex;
-        }
-        .students {
-            display: flex;
-        }
-    </style>
-    <div id="bodycontainer">
-        <div>
-            <img src="{% static 'images/group.png' %}" id="grouplogo" />
-        </div>
-        <div>
-            <p>Laboratory Manual Maker</p>
-            <p>Department of Computer Engineering</p>
-            <p>BSCpE</p>
-            <ul>
-                <li class="students">
+    <head>
+        <link rel="stylesheet" href="aboutus.css">
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="header">
+                <img src="{% static 'images/group.png' %}" id="grouplogo" />
+                <p>Laboratory Manual Maker</p>
+                <p>Department of Computer Engineering</p>
+                <p>Bachelor of Science in Computer Engineering</p>
+            </div>
+            <div class="sub-container">
+                <div class="team"> 
                     <img src="{% static 'images/Bonifacio.jpg' %}" class="idpic" />
-                    <h2>J.C. Jeff Bonifacio</h2>
-                </li>
-                <li class="students">
+                    <div class="name">J.C. Jeff Bonifacio</div>
+                    <div class="desig">Data Science</div>
+                </div>
+                <div class="team"> 
                     <img src="{% static 'images/Espela.jpg' %}" class="idpic" />
-                    <h2>Emerson Espela</h2>
-                </li>
-                <li class="students">
+                    <div class="name">Emerson Espela</div>
+                    <div class="desig">Data Science</div>
+                </div>
+                <div class="team"> 
                     <img src="{% static 'images/Ortega.png' %}" class="idpic" />
-                    <h2>Jasper Ortega</h2>
-                </li>
-                <li class="students">
+                    <div class="name">Jasper Ortega</div>
+                    <div class="desig">Data Science</div>
+                </div>
+                <div class="team"> 
                     <img src="{% static 'images/Reyes.jpg' %}" class="idpic" />
-                    <h2>Jhoanna Reyes</h2>
-                </li>
-                <li class="students">
+                    <div class="name">Jhoanna Reyes</div>
+                    <div class="desig">Data Science</div>
+                </div>
+                <div class="team"> 
                     <img src="{% static 'images/Viernes.png' %}" class="idpic" />
-                    <h2>Kent Jan Viernes</h2>
-                </li>
-            </ul>
-            <p>Engr Jonathan Taylar</p>
-            <p>Instructor</p>
+                    <div class="name">Kent Jan Viernes</div>
+                    <div class="desig">Data Science</div>
+                </div>
+            </div>
+
         </div>
-    </div>
-    
+    </body>
 {% endblock %}
